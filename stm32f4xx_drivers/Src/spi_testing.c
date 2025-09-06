@@ -67,11 +67,10 @@ int main()
 	SPI2_Init();
 
 	SPI_SSIConfig(SPI2, ENABLE); // Since we are using SSM, we need to enable SSI bit to avoid MODF error
-	
+
 	/* Send data */
-	char user_data[] = "Hello World";
+	char user_data[] = "Hello World ";
 	SPI_SendData(SPI2, (uint8_t*)user_data, sizeof(user_data));
-	
 	while(1);
 
 	return 0;
