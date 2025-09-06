@@ -1,0 +1,10 @@
+21:53:45 **** Incremental Build of configuration Debug for project 003Peripherial_Clock_Config ****
+make -j16 all 
+arm-none-eabi-size  003Peripherial_Clock_Config.elf 
+   text	   data	    bss	    dec	    hex	filename
+    712	      0	   1568	   2280	    8e8	003Peripherial_Clock_Config.elf
+Finished building: default.size.stdout
+ 
+
+21:53:45 Build Finished. 0 errors, 0 warnings. (took 168ms)
+

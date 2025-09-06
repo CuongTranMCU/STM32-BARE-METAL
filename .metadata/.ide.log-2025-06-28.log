@@ -1,0 +1,15 @@
+2025-06-29 00:00:00,237 [INFO] ServerAccessManage:473 - Download File DS10314.pdf
+2025-06-29 00:00:00,883 [INFO] LoadUrlFilesThread:156 - End of LoadUrlFiles Thread
+2025-06-29 00:00:01,123 [INFO] McuAction:142 - Datasheet
+2025-06-29 00:01:12,494 [INFO] McuResultTable:1403 - Unmark MCU STM32F411RET6 as favorite
+2025-06-29 00:01:13,300 [INFO] McuResultTable:1403 - Mark MCU STM32F411RET6 as favorite
+2025-06-29 00:02:35,452 [INFO] MultiScanPanel:200 - Auto-refresh data requested => check proxy status ongoing
+2025-06-29 00:02:36,527 [INFO] LoadUrlFilesThread:185 - End of LoadServerUrlFiles without Thread
+2025-06-29 00:02:36,531 [INFO] DetailPanel:341 - Set advertising image to C:/Users/dell/STM32Cube/Repository/\en.cubemxfinderstm32wba6.jpg
+2025-06-29 00:02:36,575 [INFO] DbBoards:642 - Loading board mini-images...
+2025-06-29 00:02:43,244 [INFO] DbBoards:665 - Loaded 211 board mini-images
+2025-06-29 00:04:26,247 [INFO] McuFinderGlobals:76 - Set McuFinderConnectedMode to true
+2025-06-29 00:04:26,311 [INFO] ApiDb:448 - Save user favorites file C:\Users\dell/.stm32cubeide/favorites.mcus.txt: 4 item(s)
+2025-06-29 00:04:26,313 [INFO] ApiDb:452 - User favorites MCUs=[STM32F407IEH6, STM32F407VGT6, STM32F411RET6, STM32F429ZIT6]
+2025-06-29 00:04:26,326 [INFO] ApiDb:448 - Save user favorites file C:\Users\dell/.stm32cubeide/favorites.boards.txt: 1 item(s)
+2025-06-29 00:04:26,327 [INFO] ApiDb:452 - User favorites Boards=[STM32F407G-DISC1]
