@@ -58,19 +58,38 @@ void SPI2_Init(void)
 
 	SPI_Init(&SPI2Handle);
 }
+
+
 int main()
 {
+	char user_data[] = "Hello World ";
 	/* Init GPIO pins to SPI2 pins */
 	SPI_GPIOInit();
+
+
 
 	/* Init SPI2 peripheral parameters */
 	SPI2_Init();
 
 	SPI_SSIConfig(SPI2, ENABLE); // Since we are using SSM, we need to enable SSI bit to avoid MODF error
 
+    /* Enable the SPI peripheral clock */
+	SPI_PeripheralControl(SPI2, ENABLE);
+
+	/* Firstly, send length to arduino */
+	uint8_t dataLen = sizeof(user_data);
+	SPI_SendData(SPI2, &dataLen, 1);
+	delay();
+	
 	/* Send data */
-	char user_data[] = "Hello World ";
 	SPI_SendData(SPI2, (uint8_t*)user_data, sizeof(user_data));
+
+	/* Wait until SPI is not busy */
+	while (SPI_GetFlagStatus(SPI2, SPI_BUSY_FLAG));
+
+	/* Disable the SPI peripheral clock */
+	SPI_PeripheralControl(SPI2, DISABLE);
+
 	while(1);
 
 	return 0;

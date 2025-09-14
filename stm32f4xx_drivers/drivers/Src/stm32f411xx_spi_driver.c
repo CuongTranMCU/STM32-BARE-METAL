@@ -75,10 +75,10 @@ void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t EnorDi)
 void SPI_Init(SPI_Handle_t *pSPIHandle)
 {
     /* Enable the SPI peripheral clock */
-	SPI_PeriClockControl(pSPIHandle->pSPIx, ENABLE);
+	SPI_PeriClockControl(SPI2, ENABLE);
 
     /* 1. Configure device mode */
-    pSPIHandle->pSPIx->CR1 |=   pSPIHandle->SPIConfig.SPI_DeviceMode << SPI_CR1_MSTR;
+    pSPIHandle->pSPIx->CR1 |= pSPIHandle->SPIConfig.SPI_DeviceMode << SPI_CR1_MSTR;
 
     /* 2. Configure bus config */
     if (SPI_BUS_CONFIG_FD == pSPIHandle->SPIConfig.SPI_BusConfig)
@@ -113,9 +113,6 @@ void SPI_Init(SPI_Handle_t *pSPIHandle)
 
     /* 7. Configure SSM */
     pSPIHandle->pSPIx->CR1 |= pSPIHandle->SPIConfig.SPI_SSM << SPI_CR1_SSM;
-
-    /* 8. Enable the SPI peripheral */
-    pSPIHandle->pSPIx->CR1 |= (1 << SPI_CR1_SPE);
 }
 
 /*****************************************************************************************
@@ -339,6 +336,57 @@ void SPI_SSIConfig(SPI_RegDef_t *pSPIx, uint8_t EnorDi)
     {
         /* Clear the SSI bit */
         pSPIx->CR1 &= ~(1 << SPI_CR1_SSI);
+    }
+}
+
+
+/*****************************************************************************************
+ * @fn      		  - SPI_PeripheralControl
+ *
+ * @brief             - This function enables or disables the SPI peripheral
+ *
+ * @param[in]         - base address of the SPI peripheral
+ * @param[in]         - ENABLE or DISABLE macros
+ * 
+ * @return            - none
+ *
+ * @Note              - none
+ */
+void SPI_PeripheralControl(SPI_RegDef_t *pSPIx, uint8_t EnorDi)
+{
+    if(EnorDi == ENABLE)
+    {
+        pSPIx->CR1 |= (1 << SPI_CR1_SPE);
+    }
+    else
+    {
+        pSPIx->CR1 &= ~(1 << SPI_CR1_SPE);
+    }
+}
+
+/*****************************************************************************************
+ * @fn      		  - SPI_SSOEConfig
+ *
+ * @brief             - This function configures the SSOE bit in CR2 register
+ *
+ * @param[in]         - base address of the SPI peripheral
+ * @param[in]         - ENABLE or DISABLE macros
+ * 
+ * @return            - none
+ *
+ * @Note              - none
+ */
+void SPI_SSOEConfig(SPI_RegDef_t *pSPIx, uint8_t EnorDi)
+{
+    if (ENABLE == EnorDi)
+    {
+        /* Set the SSOE bit */
+        pSPIx->CR2 |= (1 << SPI_CR2_SSOE);
+    }
+    else
+    {
+        /* Clear the SSOE bit */
+        pSPIx->CR2 &= ~(1 << SPI_CR2_SSOE);
     }
 }
 

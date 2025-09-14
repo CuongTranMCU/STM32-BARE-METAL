@@ -13,3 +13,156 @@ Finished building: default.size.stdout
  
 Finished building: stm32f4xx_drivers.list
  
+23:26:23 **** Clean-only build of configuration Debug for project stm32f4xx_drivers ****
+make -j16 clean 
+rm -rf ./drivers/Src/stm32f411xx_gpio_driver.cyclo ./drivers/Src/stm32f411xx_gpio_driver.d ./drivers/Src/stm32f411xx_gpio_driver.o ./drivers/Src/stm32f411xx_gpio_driver.su ./drivers/Src/stm32f411xx_spi_driver.cyclo ./drivers/Src/stm32f411xx_spi_driver.d ./drivers/Src/stm32f411xx_spi_driver.o ./drivers/Src/stm32f411xx_spi_driver.su
+rm -rf ./Startup/startup_stm32f411retx.d ./Startup/startup_stm32f411retx.o
+rm -rf ./Src/spi_testing.cyclo ./Src/spi_testing.d ./Src/spi_testing.o ./Src/spi_testing.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+rm -rf default.size.stdout stm32f4xx_drivers.elf stm32f4xx_drivers.list stm32f4xx_drivers.map
+ 
+23:26:24 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+make -j16 all 
+arm-none-eabi-gcc "../drivers/Src/stm32f411xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"D:/NAM4/FPT AUTOMOTIVE/Mastering_Microcontroller_With_Driver/PRACTICE/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/stm32f411xx_gpio_driver.d" -MT"drivers/Src/stm32f411xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "drivers/Src/stm32f411xx_gpio_driver.o"
+arm-none-eabi-gcc "../drivers/Src/stm32f411xx_spi_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"D:/NAM4/FPT AUTOMOTIVE/Mastering_Microcontroller_With_Driver/PRACTICE/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/stm32f411xx_spi_driver.d" -MT"drivers/Src/stm32f411xx_spi_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "drivers/Src/stm32f411xx_spi_driver.o"
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f411retx.d" -MT"Startup/startup_stm32f411retx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f411retx.o" "../Startup/startup_stm32f411retx.s"
+arm-none-eabi-gcc "../Src/spi_testing.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"D:/NAM4/FPT AUTOMOTIVE/Mastering_Microcontroller_With_Driver/PRACTICE/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/spi_testing.d" -MT"Src/spi_testing.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_testing.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"D:/NAM4/FPT AUTOMOTIVE/Mastering_Microcontroller_With_Driver/PRACTICE/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"D:/NAM4/FPT AUTOMOTIVE/Mastering_Microcontroller_With_Driver/PRACTICE/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -o "stm32f4xx_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\NAM4\FPT AUTOMOTIVE\Mastering_Microcontroller_With_Driver\PRACTICE\stm32f4xx_drivers\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f4xx_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32f4xx_drivers.elf
+ 
+arm-none-eabi-size  stm32f4xx_drivers.elf 
+arm-none-eabi-objdump -h -S stm32f4xx_drivers.elf  > "stm32f4xx_drivers.list"
+   text	   data	    bss	    dec	    hex	filename
+   2684	      0	   1568	   4252	   109c	stm32f4xx_drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32f4xx_drivers.list
+ 
+22:06:08 **** Clean-only build of configuration Debug for project stm32f4xx_drivers ****
+make -j16 clean 
+rm -rf ./drivers/Src/stm32f411xx_gpio_driver.cyclo ./drivers/Src/stm32f411xx_gpio_driver.d ./drivers/Src/stm32f411xx_gpio_driver.o ./drivers/Src/stm32f411xx_gpio_driver.su ./drivers/Src/stm32f411xx_spi_driver.cyclo ./drivers/Src/stm32f411xx_spi_driver.d ./drivers/Src/stm32f411xx_spi_driver.o ./drivers/Src/stm32f411xx_spi_driver.su
+rm -rf ./Startup/startup_stm32f411retx.d ./Startup/startup_stm32f411retx.o
+rm -rf ./Src/spi_testing.cyclo ./Src/spi_testing.d ./Src/spi_testing.o ./Src/spi_testing.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+rm -rf default.size.stdout stm32f4xx_drivers.elf stm32f4xx_drivers.list stm32f4xx_drivers.map
+ 
+22:06:10 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+make -j16 all 
+arm-none-eabi-gcc "../drivers/Src/stm32f411xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"D:/NAM4/FPT AUTOMOTIVE/Mastering_Microcontroller_With_Driver/PRACTICE/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/stm32f411xx_gpio_driver.d" -MT"drivers/Src/stm32f411xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "drivers/Src/stm32f411xx_gpio_driver.o"
+arm-none-eabi-gcc "../drivers/Src/stm32f411xx_spi_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"D:/NAM4/FPT AUTOMOTIVE/Mastering_Microcontroller_With_Driver/PRACTICE/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/stm32f411xx_spi_driver.d" -MT"drivers/Src/stm32f411xx_spi_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "drivers/Src/stm32f411xx_spi_driver.o"
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f411retx.d" -MT"Startup/startup_stm32f411retx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f411retx.o" "../Startup/startup_stm32f411retx.s"
+arm-none-eabi-gcc "../Src/spi_testing.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"D:/NAM4/FPT AUTOMOTIVE/Mastering_Microcontroller_With_Driver/PRACTICE/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/spi_testing.d" -MT"Src/spi_testing.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_testing.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"D:/NAM4/FPT AUTOMOTIVE/Mastering_Microcontroller_With_Driver/PRACTICE/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"D:/NAM4/FPT AUTOMOTIVE/Mastering_Microcontroller_With_Driver/PRACTICE/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -o "stm32f4xx_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\NAM4\FPT AUTOMOTIVE\Mastering_Microcontroller_With_Driver\PRACTICE\stm32f4xx_drivers\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f4xx_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32f4xx_drivers.elf
+ 
+arm-none-eabi-size  stm32f4xx_drivers.elf 
+arm-none-eabi-objdump -h -S stm32f4xx_drivers.elf  > "stm32f4xx_drivers.list"
+   text	   data	    bss	    dec	    hex	filename
+   2684	      0	   1568	   4252	   109c	stm32f4xx_drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32f4xx_drivers.list
+ 
+22:06:34 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+make -j16 all 
+arm-none-eabi-size  stm32f4xx_drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2684	      0	   1568	   4252	   109c	stm32f4xx_drivers.elf
+Finished building: default.size.stdout
+ 
+22:07:18 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+make -j16 all 
+arm-none-eabi-size  stm32f4xx_drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2684	      0	   1568	   4252	   109c	stm32f4xx_drivers.elf
+Finished building: default.size.stdout
+ 
+23:12:44 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+make -j16 all 
+arm-none-eabi-gcc "../drivers/Src/stm32f411xx_spi_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"D:/NAM4/FPT AUTOMOTIVE/Mastering_Microcontroller_With_Driver/PRACTICE/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/stm32f411xx_spi_driver.d" -MT"drivers/Src/stm32f411xx_spi_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "drivers/Src/stm32f411xx_spi_driver.o"
+arm-none-eabi-gcc "../Src/spi_testing.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"D:/NAM4/FPT AUTOMOTIVE/Mastering_Microcontroller_With_Driver/PRACTICE/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/spi_testing.d" -MT"Src/spi_testing.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_testing.o"
+arm-none-eabi-gcc -o "stm32f4xx_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\NAM4\FPT AUTOMOTIVE\Mastering_Microcontroller_With_Driver\PRACTICE\stm32f4xx_drivers\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f4xx_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32f4xx_drivers.elf
+ 
+arm-none-eabi-size  stm32f4xx_drivers.elf 
+arm-none-eabi-objdump -h -S stm32f4xx_drivers.elf  > "stm32f4xx_drivers.list"
+   text	   data	    bss	    dec	    hex	filename
+   2684	      0	   1568	   4252	   109c	stm32f4xx_drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32f4xx_drivers.list
+ 
+23:26:34 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+make -j16 all 
+arm-none-eabi-gcc "../drivers/Src/stm32f411xx_spi_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"D:/NAM4/FPT AUTOMOTIVE/Mastering_Microcontroller_With_Driver/PRACTICE/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/stm32f411xx_spi_driver.d" -MT"drivers/Src/stm32f411xx_spi_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "drivers/Src/stm32f411xx_spi_driver.o"
+arm-none-eabi-gcc "../Src/spi_testing.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"D:/NAM4/FPT AUTOMOTIVE/Mastering_Microcontroller_With_Driver/PRACTICE/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/spi_testing.d" -MT"Src/spi_testing.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_testing.o"
+arm-none-eabi-gcc -o "stm32f4xx_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\NAM4\FPT AUTOMOTIVE\Mastering_Microcontroller_With_Driver\PRACTICE\stm32f4xx_drivers\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f4xx_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32f4xx_drivers.elf
+ 
+arm-none-eabi-size  stm32f4xx_drivers.elf 
+arm-none-eabi-objdump -h -S stm32f4xx_drivers.elf  > "stm32f4xx_drivers.list"
+   text	   data	    bss	    dec	    hex	filename
+   2740	      0	   1568	   4308	   10d4	stm32f4xx_drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32f4xx_drivers.list
+ 
+23:30:23 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+make -j16 all 
+arm-none-eabi-gcc "../drivers/Src/stm32f411xx_spi_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"D:/NAM4/FPT AUTOMOTIVE/Mastering_Microcontroller_With_Driver/PRACTICE/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/stm32f411xx_spi_driver.d" -MT"drivers/Src/stm32f411xx_spi_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "drivers/Src/stm32f411xx_spi_driver.o"
+arm-none-eabi-gcc "../Src/spi_testing.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"D:/NAM4/FPT AUTOMOTIVE/Mastering_Microcontroller_With_Driver/PRACTICE/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/spi_testing.d" -MT"Src/spi_testing.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_testing.o"
+arm-none-eabi-gcc -o "stm32f4xx_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\NAM4\FPT AUTOMOTIVE\Mastering_Microcontroller_With_Driver\PRACTICE\stm32f4xx_drivers\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f4xx_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32f4xx_drivers.elf
+ 
+arm-none-eabi-size  stm32f4xx_drivers.elf 
+arm-none-eabi-objdump -h -S stm32f4xx_drivers.elf  > "stm32f4xx_drivers.list"
+   text	   data	    bss	    dec	    hex	filename
+   2740	      0	   1568	   4308	   10d4	stm32f4xx_drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32f4xx_drivers.list
+ 
+23:31:35 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/spi_testing.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"D:/NAM4/FPT AUTOMOTIVE/Mastering_Microcontroller_With_Driver/PRACTICE/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/spi_testing.d" -MT"Src/spi_testing.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_testing.o"
+arm-none-eabi-gcc -o "stm32f4xx_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\NAM4\FPT AUTOMOTIVE\Mastering_Microcontroller_With_Driver\PRACTICE\stm32f4xx_drivers\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f4xx_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32f4xx_drivers.elf
+ 
+arm-none-eabi-size  stm32f4xx_drivers.elf 
+arm-none-eabi-objdump -h -S stm32f4xx_drivers.elf  > "stm32f4xx_drivers.list"
+   text	   data	    bss	    dec	    hex	filename
+   2740	      0	   1568	   4308	   10d4	stm32f4xx_drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32f4xx_drivers.list
+ 
+23:45:03 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/spi_testing.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"D:/NAM4/FPT AUTOMOTIVE/Mastering_Microcontroller_With_Driver/PRACTICE/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/spi_testing.d" -MT"Src/spi_testing.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_testing.o"
+arm-none-eabi-gcc -o "stm32f4xx_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\NAM4\FPT AUTOMOTIVE\Mastering_Microcontroller_With_Driver\PRACTICE\stm32f4xx_drivers\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f4xx_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32f4xx_drivers.elf
+ 
+arm-none-eabi-size  stm32f4xx_drivers.elf 
+arm-none-eabi-objdump -h -S stm32f4xx_drivers.elf  > "stm32f4xx_drivers.list"
+   text	   data	    bss	    dec	    hex	filename
+   2740	      0	   1568	   4308	   10d4	stm32f4xx_drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32f4xx_drivers.list
+ 
+23:50:49 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/spi_testing.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -I"D:/NAM4/FPT AUTOMOTIVE/Mastering_Microcontroller_With_Driver/PRACTICE/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/spi_testing.d" -MT"Src/spi_testing.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_testing.o"
+arm-none-eabi-gcc -o "stm32f4xx_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\NAM4\FPT AUTOMOTIVE\Mastering_Microcontroller_With_Driver\PRACTICE\stm32f4xx_drivers\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f4xx_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32f4xx_drivers.elf
+ 
+arm-none-eabi-size  stm32f4xx_drivers.elf 
+arm-none-eabi-objdump -h -S stm32f4xx_drivers.elf  > "stm32f4xx_drivers.list"
+   text	   data	    bss	    dec	    hex	filename
+   2732	      0	   1568	   4300	   10cc	stm32f4xx_drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32f4xx_drivers.list
+ 

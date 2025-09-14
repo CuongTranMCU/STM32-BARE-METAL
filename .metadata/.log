@@ -2564,3 +2564,105 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-09-06 19:03:53.134
 !MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2025-09-07 23:20:17.391 -----------------------------------------------
+eclipse.buildId=Version 1.16.0
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2025-09-07 23:20:26.430
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-09-07 23:20:58.542
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-09-07 23:20:58.558
+!MESSAGE Log4j2 initialized with config file D:\NAM4\FPT AUTOMOTIVE\Mastering_Microcontroller_With_Driver\PRACTICE\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-09-07 23:21:08.932
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-09-07 23:32:52.403
+!MESSAGE An internal error occurred during: "Execute Debug Command".
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: assertion failed: The application has not been initialized.
+	at org.eclipse.core.runtime.Assert.isTrue(Assert.java:119)
+	at org.eclipse.core.internal.runtime.InternalPlatform.assertInitialized(InternalPlatform.java:183)
+	at org.eclipse.core.internal.runtime.InternalPlatform.getAdapterManager(InternalPlatform.java:204)
+	at org.eclipse.core.runtime.Platform.getAdapterManager(Platform.java:662)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunch.getAdapter(GdbLaunch.java:454)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunch.disconnect(GdbLaunch.java:338)
+	at org.eclipse.debug.internal.core.commands.DisconnectCommand.execute(DisconnectCommand.java:35)
+	at org.eclipse.debug.internal.core.commands.ForEachCommand.doExecute(ForEachCommand.java:36)
+	at org.eclipse.debug.core.commands.AbstractDebugCommand$1.run(AbstractDebugCommand.java:215)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.debug.core 4 2 2025-09-07 23:32:52.453
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.debug.core".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "org.eclipse.debug.core.DebugPlugin.asyncExec(java.lang.Runnable)" because the return value of "org.eclipse.debug.core.DebugPlugin.getDefault()" is null
+	at org.eclipse.cdt.dsf.debug.model.DsfLaunch.fireTerminate(DsfLaunch.java:47)
+	at org.eclipse.debug.core.Launch.handleDebugEvents(Launch.java:644)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.run(DebugPlugin.java:1265)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.dispatch(DebugPlugin.java:1299)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:498)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-09-07 23:32:52.454
+!MESSAGE An internal error occurred during: "Debug Event Dispatch".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "org.eclipse.debug.core.DebugPlugin.getLog()" because the return value of "org.eclipse.debug.core.DebugPlugin.getDefault()" is null
+	at org.eclipse.debug.core.DebugPlugin.log(DebugPlugin.java:1107)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.handleException(DebugPlugin.java:1251)
+	at org.eclipse.core.runtime.SafeRunner.handleException(SafeRunner.java:88)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:49)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.dispatch(DebugPlugin.java:1299)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:498)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 2 2 2025-09-07 23:32:52.729
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.cdt.dsf.gdb.internal.ui.console.GdbBasicCliConsole$InputReadJob
+!SESSION 2025-09-08 21:51:45.779 -----------------------------------------------
+eclipse.buildId=Version 1.16.0
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-09-08 21:52:25.750
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-09-08 21:52:25.773
+!MESSAGE Log4j2 initialized with config file D:\NAM4\FPT AUTOMOTIVE\Mastering_Microcontroller_With_Driver\PRACTICE\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-09-08 21:52:35.193
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2025-09-08 22:06:14.103
+!MESSAGE Won't launch debug session since we failed to locate the binary.
+
+!ENTRY org.eclipse.cdt.dsf 4 10001 2025-09-08 22:30:18.055
+!MESSAGE Target not available.
+
+!ENTRY org.eclipse.cdt.dsf 4 10001 2025-09-08 23:29:14.975
+!MESSAGE Target not available.
+
+!ENTRY org.eclipse.core.jobs 2 2 2025-09-08 23:53:34.691
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.cdt.dsf.gdb.internal.ui.console.GdbBasicCliConsole$InputReadJob
+!SESSION 2025-09-09 21:48:13.375 -----------------------------------------------
+eclipse.buildId=Version 1.16.0
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-09-09 21:48:57.881
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-09-09 21:48:57.896
+!MESSAGE Log4j2 initialized with config file D:\NAM4\FPT AUTOMOTIVE\Mastering_Microcontroller_With_Driver\PRACTICE\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-09-09 21:49:14.169
+!MESSAGE Started RMI Server, listening on port 41337
